@@ -2,6 +2,7 @@ require(readr)
 require(dplyr)
 require(purrr)
 require(stringr)
+require(lubridate)
 
 get_tidy_data <- function() {
     
@@ -65,6 +66,34 @@ get_tidy_data <- function() {
         mutate(SubMetering3 = as.integer(as.double(SubMetering3))) %>%
         mutate(Voltage = as.integer(Voltage))    
 }
+
+ret <<- NULL
+
+get_filtered_data <- function() {
+    
+    if(!is.null(ret)) {
+        return(ret)
+    }
+    
+    ret <<- get_tidy_data() %>%
+        filter( (DateTime >= ymd(20070201)) & (DateTime <= ymd(20070202) ) )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
