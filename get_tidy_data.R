@@ -64,7 +64,7 @@ get_tidy_data <- function() {
         mutate(SubMetering1 = as.integer(as.double(SubMetering1))) %>%
         mutate(SubMetering2 = as.integer(as.double(SubMetering2))) %>%
         mutate(SubMetering3 = as.integer(as.double(SubMetering3))) %>%
-        mutate(Voltage = as.integer(Voltage))    
+        mutate(Voltage = Voltage / 1000)    
 }
 
 ret <<- NULL
