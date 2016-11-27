@@ -76,26 +76,6 @@ get_filtered_data <- function() {
     }
     
     ret <<- get_tidy_data() %>%
-        filter( (DateTime >= ymd(20070201)) & (DateTime <= ymd(20070202) ) )
+        filter( (DateTime >= ymd(20070201)) & (DateTime < ymd(20070203) ) )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
